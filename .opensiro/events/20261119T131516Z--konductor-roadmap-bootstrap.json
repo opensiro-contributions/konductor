@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261119T131516Z--konductor-roadmap-bootstrap",
+  "recorded_at": "2026-11-19T13:15:16Z",
+  "actor": "ChatGPT OpenSiro roadmap executor via dev-alpha-2 SSH/gh (authenticated xLagerFeuer)",
+  "kind": "DECISION",
+  "case_id": "aws-toolkit-adaptation-20261119",
+  "decision": "NO_GO",
+  "evidence_urls": [
+    "https://github.com/aws-solutions/konductor/commit/05360b8cc17e174d0eb85173432094b88a799b64",
+    "https://github.com/opensiro/vsm-harness-index/blob/34e11ec4dd52e1ba3ee0111d8bca73f13918f54f/assessments/ko/konductor.md",
+    "https://github.com/aws-solutions/konductor/issues/39"
+  ],
+  "next_action": "No additional S4 constructor implementation. Public fork Issue awaits separate exact consent; restrictive bootstrap PAUSE/DORMANT grants no later RESUME."
+}
