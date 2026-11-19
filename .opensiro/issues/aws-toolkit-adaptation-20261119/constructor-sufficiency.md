@@ -1,76 +1,74 @@
-# Konductor — S4 constructor sufficiency review
+# Konductor — S4 host-capability adaptation constructor sufficiency
 
-[Human decision](issue.md) · [Receipt](roadmap.md). PLAN_ONLY / NEEDS_EVIDENCE. **Final decision: NO_GO** for an additional S4 constructor now. Proposed C is not qualified, implemented or assessed.
+**Human decision:** [issue.md](issue.md). **Canonical receipt:** [roadmap.md](roadmap.md). This is a technical companion, not another public Issue or current Index assessment.
 
-## Boundary and accepted baseline
+**Target transition:** S4=? -> S4=C
+**Proposal-stage decision:** GO
+**Research disposition:** NEEDS_EVIDENCE
 
-**Accepted historical baseline:** `S1=A · S2=A · S3=A · S3*=A · S4=? · S5=—`.
+## 1. Source and boundary
 
-[Accepted Index assessment](https://github.com/opensiro/vsm-harness-index/blob/34e11ec4dd52e1ba3ee0111d8bca73f13918f54f/assessments/ko/konductor.md), Index `34e11ec4dd52e1ba3ee0111d8bca73f13918f54f`, assessment blob `01e846897ae499497ffd65a2be0d359187f2e866`, reviewed 2026-11-18 at original `09c34858ca2e704fb8572c91389a87255b1e1075`; Profile 0.2.4 / Methodology 0.3.8. The catalog row is `konductor`, position 1253, matching this repository and review ref. This is one calendar day old on 2026-11-19. Main has materially changed; refresh the Index assessment before any current-grade claim. There is no automatic regrade.
+Pinned original: [aws-solutions/konductor@783603d485727654fa1ab51fefbd9d1169fefa86](https://github.com/aws-solutions/konductor/commit/783603d485727654fa1ab51fefbd9d1169fefa86), one installed multi-agent software-delivery cell. Included accepted Index [Konductor](https://github.com/opensiro/vsm-harness-index/blob/59b99775d049a19fa29e7cc410a840bb5bf1ecc7/assessments/ko/konductor.md) at 59b99775d049a19fa29e7cc410a840bb5bf1ecc7 / historical 09c34858ca2e704fb8572c91389a87255b1e1075 / blob 01e846897ae499497ffd65a2be0d359187f2e866, Profile 0.2.4, methodology 0.3.8. All historic grades/priority judgments belong to [roadmap.md](roadmap.md); avoid current-HEAD regrading.
 
-| Function | Accepted | Meaning and roadmap consequence |
+The first-party installed agent and generated prompt/skill/SOP distribution is in scope, as are its installer/config/doctor support surfaces. Host Kiro/Claude internals, user permissions, contributor organization and upstream maintainer release work are not in-boundary S4 owners. Current supported single-writer and specialist modes must remain distinguishable.
+
+## 2. Original-native Track A, capability and ownership
+
+- **SHIPPED diagnostics, not a choice owner:** [doctor.rs](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/cli/konductor-rs/src/cli/doctor.rs) checks source/runtime/manifest/config/index/telemetry/orchestration and emits warnings/failures. Proposed provider_model_access and role_allowlists checks are not implemented in the current source; do not credit them as a live capability inventory.
+- **SHIPPED rights and modes:** [orchestration_mode.rs](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/cli/konductor-rs/src/cli/orchestration_mode.rs) reads user-level `~/.konductor/config.yml` and distinguishes auto from coordinator; a model may not silently persist a different user mode.
+- **SHIPPED source-defined host transformation:** [agent specs](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/agents/konductor.agent-spec.json), [synth spawn policy](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/cli/konductor-rs/src/cli/synth/spawn_policy.rs), [delegation](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/skills/delegation-protocol/SKILL.md) and [orchestrator rules](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/context/k-orchestrator-shared.md) bound which roles/tools can run.
+- **SHIPPED research and provenance:** [external-research](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/skills/external-research/SKILL.md) researches version-relevant official docs; [persistent-memory](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/skills/persistent-memory/SKILL.md) protects user-origin entries; [workspace-skills](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/skills/workspace-skills/SKILL.md) supports provenance-aware procedure capture, not unlimited autonomous configuration changes.
+- **NATIVE CHANGE OPEN, NOT SHIPPED:** [PR #312](https://github.com/aws-solutions/konductor/pull/312) documents 46 missing role skill declarations on Kiro and an observed different outcome on Claude; PR aims to expose declared skills. [PR #303](https://github.com/aws-solutions/konductor/pull/303) covers SOP skill invocation on Claude; [PR #207](https://github.com/aws-solutions/konductor/pull/207) completes a stacked usage-metrics feature but is OPEN, so `metrics` remains a CLI stub on 783603d485727654fa1ab51fefbd9d1169fefa86.
+- **Other native work:** [#72](https://github.com/aws-solutions/konductor/issues/72) proposes reusable verification proof receipts (S3*), [#176](https://github.com/aws-solutions/konductor/issues/176) addresses trust index, [#301](https://github.com/aws-solutions/konductor/issues/301) addresses per-turn metrics attribution. These are not accepted S4 construction and should not be displaced.
+
+Track A best comparator is manual `konductor doctor` + host-available skill selection + ordinary user-approved configuration/release changes. Do not introduce a new controller merely to reproduce PR #312.
+
+## 3. Complete proposed Track B — S4-specific decision/authority/return loop
+
+**Disturbance:** A subsequent Kiro/Claude host revision alters skill/SOP loading for a next task; #312 documents a concrete class. The scenario is OBSERVED at the original PR level; incremental OpenSiro benefit is HYPOTHETICAL.
+
+**New first-party developer composition:** Add a small opt-in `host-capability-adaptation` installed skill and one routing trigger in the existing Konductor rules. Developer configures which supported host/skill alternatives may be trialed; no novel central agent, service, scheduler, registry or fixed AWS feature stack. Existing `doctor` and first-party skill registration provide diagnostics; where a necessary capability cannot be reliably observed, report unknown instead of hallucinating support.
+
+**Decisive S4 owner:** A model-backed researcher/installed orchestrator running the specific prospective adaptation contract chooses between at least two lawful, source-backed next-task adaptations (e.g. retain working specialist path or route eligible future tasks through the explicitly supported alternative). Its decision must contain source, version, future consequence, counterargument and exact permissions.
+
+**S3 relationship:** The current Konductor manager accepts, refuses or defers a particular trial based on available rights, phase and project commitments; it chooses the next permitted operating allocation. A random hook or deterministic doctor warning is *transport*, not the S4 owner. The S3 manager need not be replaced.
+
+**Effect and feedback:** On the next eligible task the installed path actually invokes the approved agent/skill, records discovered capability and task/test outcome, and returns result to S4, which retains/revises/discards the proposal. The local bounded receipt preserves status and source without overwriting user memory or installing arbitrary content. No false successful decision without real next-task evidence.
+
+**Authority:** The user retains S5 and approvals for permanent config, plugin installation, trust, permissions and repository modifications. Absent explicit allowed alternatives, return `NEEDS_USER_DECISION`/halt. A fallback to an unsupported skill or an untrusted remote package is never an allowed action. For Kiro and Claude, mode-specific tool allowlists remain unchanged.
+
+**C sufficiency reasoning:** This is a first-party developer-composable S4-specific decision path that links environmental prospective distinction to S3 trial and actual operating return, rather than static feature detection, maintenance backlog or memory. It is a *proposed constructor*, not built S4=C. It fails if a single native warning/manual fix yields identical value with less complexity, or if no true prospective decision and later feedback exists.
+
+## 4. Ports and lowest-cost alternative
+
+| Required port | Reused original | Minimal missing construction |
 | --- | --- | --- |
-| S1 | A | Installed coding/research specialists own operational decisions; no constructor work required. |
-| S2 | A | Orchestrator resolves shared-file/worktree interference; preserve it. |
-| S3 | A | Orchestrator manages active specialist commitments and recovery; preserve it. |
-| S3* | A | Separate adversarial reviewers/checker return findings; no replacement proposed. |
-| S4 | ? | Memory/skill reuse is plausible, but prospective organizational adaptation closure is unresolved; investigate, do not turn uncertainty into absence. |
-| S5 | — | No in-boundary ultimate policy owner established; retain legitimate user/maintainer rights, no new governance layer. |
+| Host capability evidence | `doctor`, synth skill registry, host-specific install info | Explicit versioned skill-availability observation with UNKNOWN; no assumptions about unmerged PR #312 |
+| Future choice ownership | k-researcher, orchestrator, external-research | Optional adaptation contract with two lawful alternatives and prospective next-task impact |
+| Legitimate S3 handoff | Direct-work / delegated orchestration, SOP gates | Accept/refuse/defer trial, reason and exact next-task routing under user's rules |
+| Operational act and return | Installed specialist invocations, first-party task result and evidence | Later-run receipt: actual skill used, result, failure, rollback, S4 reevaluation |
+| Safety and parent | User-owned orchestration mode, provenance guards, confirmation SOP | Prevent non-consensual persistent writes, privileges, install and trust changes |
 
+No fixed multi-port numeric target is inferred from Paperclip or earlier historical cases. Minimal native files are the new opt-in installed skill and narrowly bounded invocation/receipt plumbing, with any code diagnostics changes only if existing `doctor` cannot supply the necessary verified input.
 
-System: one installed Konductor project delivery cell in configured Kiro CLI or Claude Code, including its distributed roles/skills/SOPs. Exclude AWS service governance, host internals and the upstream maintainer organization. Original current main `05360b8cc17e174d0eb85173432094b88a799b64`, observed 2026-11-19. Never credit the maintainer's updating distributed skills as runtime S4 of every installed cell.
+## 5. Future source-native acceptance; results NOT_RUN
 
-## Function and counterfactual
+| Proposed native case | Source-supported input / future command | Expected first-party effect and return | Falsifier |
+| --- | --- | --- | --- |
+| Cross-host skill drift | Fixture with Kiro skill unavailable vs Claude known available, build/synth and permitted host smoke; `cd cli && make test` if CLI changed | S4 selects among allowable future routes; S3 trial later uses actual supported path and returns outcome | Only reports a warning, no decision or later effect |
+| Alternative and feedback | Two explicitly authorized possible routes on same task | Different lawful S4 choices drive distinct permitted next-run action and failure/success receipt | Hard-coded route or unverified benefit |
+| Parent/negative boundary | Missing required skill, invalid source, no consent for mode/config/installation | No privilege or persistent setting changes; halt or user decision | Unapproved mutation or fake successful fallback |
+| Matched original baseline | Same host/task after native `doctor` and manual fix or merged #312 behavior, aligned rights/results | Incremental result outweighs engineering and runtime complexity | Native baseline equally succeeds with lower complexity |
 
-S2 resolves interference; S3 manages current delivery; S3* returns independent findings; S4 develops externally/prospectively oriented alternatives in two-way dialogue with S3; S5 owns legitimate ultimate policy. [Profile 0.2.4](https://github.com/opensiro/vsm-harness-profile/blob/v0.2.4/PROFILE.md) governs meaning.
+Relevant original commands are documented in [Makefile](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/Makefile) and [cli/README.md](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/cli/README.md); `npm test`, `make test-py`, `cd cli && make test`, `cd cli && make lint` depend on actual touched files. **None executed.** Code-structure review, remote source links and a case validator cannot prove observed S4 closure. Runtime cost NOT_MEASURED.
 
-Candidate user task: after AWS guidance changes, adapt the installed team's future IaC verification practice while preserving user rights and demonstrate a better later task outcome. Best baseline: existing AWS search/retrieve, `infra-validation`, explicit trust gates, and user-confirmed workspace procedure capture. Current issue #39 instead chiefly asks for source-maintenance choices. No matched failure shows that this baseline needs a separate adaptation actor.
+## 6. Verdict, falsifier, provenance and next gate
 
-## Shipped vs proposed evidence
+**Proposal-stage decision:** GO
+**Research disposition:** NEEDS_EVIDENCE
 
-| Port / behavior | Source / observed status | Coverage and limitation |
-| --- | --- | --- |
-| External discovery and options | [find-aws-skills](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/find-aws-skills/SKILL.md), SHIPPED source contract | Search relevant descriptions, choose exact skill name, retrieve references; if unavailable offer retry/native alternative/user choice. Task-time selection is not automatically prospective team adaptation. |
-| IaC application | [infra-validation](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/infra-validation/SKILL.md), SHIPPED | Loads CloudFormation/CDK/IAM/DynamoDB checks and reports unrun layers. `cdk synth`, deployment and account actions retain explicit rights. |
-| Related skill migration | [dynamodb-design](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/dynamodb-design/SKILL.md), [iam-policy-design](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/iam-policy-design/SKILL.md), [policy-validation](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/policy-validation/SKILL.md), [cost-estimation](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/cost-estimation/SKILL.md), SHIPPED | Concrete toolkit use/pointers and review rules already exist. `dynamodb-validation` no longer exists at this pin. No claim of complete live AWS coverage. |
-| Research / current manager | [k-researcher](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/agents/k-researcher.agent-spec.json), [konductor](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/agents/konductor.agent-spec.json), SHIPPED | Research returns source-linked findings; orchestrator owns current assignments/review. Neither defines a new strategic change mandate. |
-| Durable option application | [workspace-skills](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/workspace-skills/SKILL.md), SHIPPED | Offers confirmed creation/update with provenance restrictions, Kiro startup resource / Claude discovery. Preserve user-authored entries. Requires an actual later run to prove effect. |
-| Facts and provenance | [persistent-memory](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/skills/persistent-memory/SKILL.md), SHIPPED | Bounded facts, path validator, protected user origins. Memory writes alone do not establish S4. |
-| Kiro reachability | [PR #224](https://github.com/aws-solutions/konductor/pull/224), OPEN head `5ce102d345df7b640d4a532eabb302369aeaa65a` | Inspected diff: merges dependencies.mcpRegistry into V2/V3 configs, with harness override tests. Main source lacks `with_registry_mcp_servers`; do not assume this is shipped or current installed users have AWS configured. |
-| Claude permission lifecycle | [PR #285](https://github.com/aws-solutions/konductor/pull/285), OPEN head `ff6102a21c478c36156950165cb84ca60c462753` | Inspected diff: ask/allow merging and uninstall attribution. It constrains tools; it does not own adaptation decisions. Test additions are author/source evidence, not tests run by this assessment. |
-| Maintainer demand | [Issue #39](https://github.com/aws-solutions/konductor/issues/39), OPEN, no comments at readback | Per-skill replace/rework/keep discussion; parts stale relative to main. Do not duplicate it. |
+A coherent, rights-bounded *possible* S4 constructor is described using pinned original-native code; no automatic main-branch change, maintainer acceptance, external issue, actual new VSM grade, or achieved outcome is claimed. Essential future falsifier: native manual doctor/#312 solves same later task with equal or better verified outcome, or candidate lacks S4 owner, S3 exchange, valid permissions or operating return. If so, discard P0.
 
-## Constructor sufficiency and authority
+**Historical comparison after independent decision:** [Earlier AWS controller NO_GO](https://github.com/opensiro-contributions/konductor/blob/8975ba9f4165388c7ada9da4a8bf9caa6479880c/.opensiro/issues/aws-toolkit-adaptation-20261119/constructor-sufficiency.md) evaluated a different #39 adaptation need; it was not used to choose this host compatibility question. The old negative remains valid for its prior scoped object unless separate contrary evidence arises.
 
-No qualified C target. Five necessary relationships were checked, not implemented:
-
-| Relationship | Current result / what would have to change to justify reconsideration |
-| --- | --- |
-| External prospective distinction and alternatives | Discovery exists; no measured recurring installed-team failure or reasoned prospective adaptation alternatives established. |
-| Independent developer-composed decision owner | Generic roles/skills are configurable, but no source-specific delegated strategic selector contract with a demonstrated new task is established. A hook is insufficient. |
-| Lawful state / enforcement | Confirmed procedure writes and protected provenance already exist; a future design must preserve them and bind authorization to the exact scope/version, not infer a general AWS write grant. |
-| S3 feasibility dialogue | Require current manager to accept/refuse/defer a proposed practice based on workload/tool rights; no such future-strategy exchange and outcome is demonstrated here. |
-| Later operational return | Later skill reload is plausible, but no concrete changed specialist run and returned success/failure trace for this adaptation were observed. |
-
-P0: rejected additional S4 constructor. P1: evidence-only reconsideration conditions, not an authorized engineering backlog. P2: NONE. S1/S2/S3/S3* already A need no forced C work; S5 remains outside this proposal. No optional C(P) mode is justified.
-
-## Native acceptance for possible future reconsideration
-
-These cases are tailored proposals, **NOT RUN**; they are not a mandatory generic AC suite or evidence of C.
-
-| Native comparison | Necessary observation / falsifier |
-| --- | --- |
-| Same IaC project, same external AWS-check change, same host rights: native retrieval vs candidate controller | Identify an actual missed future-task outcome in the native arm and correct later specialist output in the candidate arm. If ordinary retrieval/confirmed capture achieves it, retain NO_GO. |
-| Two legitimate choices: retain local gate / adopt revised external check | Chosen strategy changes later verification behavior and its receipt; a hard-coded update or recommendation only fails. |
-| User refuses capture, user-authored skill, missing tool or untrusted synthesis | No unauthorized mutation or execution; preserve existing prompt/provenance rights and report the gap. A new selector cannot grant itself rights. |
-| Proposed check is incompatible or later operation fails | S3 receives truthful failure and holds/reverts within legitimate rights; no fabricated successful adoption. |
-
-Source-native future validation commands from [Makefile](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/Makefile) and [PR template](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/.github/PULL_REQUEST_TEMPLATE.md): `npm test`; `make test-py`; relevant `make test-skills-sh`; CLI changes additionally `cd cli && make test` and `cd cli && make lint`; behavior changes require build/synth/install and actual host smoke/benchmark where applicable. Deterministic structure tests alone cannot prove LLM decision quality, external service correctness or S4 closure. No product change was made, so no such suite was run for this roadmap.
-
-## Rights, alternatives, cost and final contract
-
-Apache-2.0 [license](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/LICENSE.txt), original notices preserved. [CONTRIBUTING](https://github.com/aws-solutions/konductor/blob/05360b8cc17e174d0eb85173432094b88a799b64/CONTRIBUTING.md) accepts non-core PRs, asks for discussion before significant work, licensing confirmation and potentially a CLA for larger changes; fork CI needs maintainer `/codebuild_run(<SHA>)`. No express AI ban or mandatory DCO found in inspected root guidance/PR template; this is bounded evidence, not proof of no other requirements. Personal CLA/licensing attestations and human review claims cannot be invented. No external communication approved.
-
-Native maintenance under #39 remains an independent choice. An Index reassessment is advisable due to material drift even though the accepted review is only one day old. No demonstrated Profile defect or case for a domain fork. Paired cost: same task/host/rights/output bar, total engineering/integration/review/test/regression effort and outcome correctness; **NOT_MEASURED**.
-
-**Terminal decision: NO_GO** for the additional constructor now. This is a present engineering decision under incomplete benefit evidence, not proof that S4 is absent or useless in every deployment. Reopen only with the matched recurring failure and complete authorized closure described above. [Human backlink](issue.md).
+**Publication:** No original or fork public Issue/comment/PR; only internal fork metadata and (separately) internal OpenSiro coordination PR permitted. Exact current-conversation external-publication approval would be required to send any maintainer-facing text. Rights: Apache-2.0, possible CLA for larger contributions, fork CI maintainer approval required. AI-assisted analysis, no live tests or savings claim.

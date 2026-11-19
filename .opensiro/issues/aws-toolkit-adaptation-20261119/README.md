@@ -1,22 +1,15 @@
-# Konductor — AWS toolkit adaptation roadmap
+# Konductor — independent whole-repository roadmap re-run
 
-**Final feature decision: NO_GO. Persistence: PERSISTED on opensiro/meta.** PLAN_ONLY / NEEDS_EVIDENCE. Additional S4 constructor not justified now; use native retrieval/confirmed capture and source-specific issue #39 reconciliation. No implementation backlog authorized.
+**2026-11-19 v0.18.0 independent rerun:** Scoped **GO + NEEDS_EVIDENCE** for *proposed* `S4=? -> S4=C` host-capability drift adaptation. **Not implemented, not native-tested, not published externally.** Indexed historical grade unchanged.
 
-- Original: https://github.com/aws-solutions/konductor
-- Original source: `05360b8cc17e174d0eb85173432094b88a799b64`
-- Accepted Index: `34e11ec4dd52e1ba3ee0111d8bca73f13918f54f`; [assessment](https://github.com/opensiro/vsm-harness-index/blob/34e11ec4dd52e1ba3ee0111d8bca73f13918f54f/assessments/ko/konductor.md)
-- Case id: `aws-toolkit-adaptation-20261119`
-- [Human Issue draft](issue.md)
-- [AI/developer sufficiency review](constructor-sufficiency.md)
-- [Source/authority/delivery receipt](roadmap.md)
-- Public Issue number / URL: NOT_CREATED
-- Working fork: https://github.com/opensiro-contributions/konductor
-- Verified parent: aws-solutions/konductor
-- Metadata commit: this containing commit on opensiro/meta; exact SHA read back in the execution handoff
-- Owner control / attention: PAUSE / DORMANT (restrictive initial bootstrap)
+- Original: https://github.com/aws-solutions/konductor @ 783603d485727654fa1ab51fefbd9d1169fefa86
+- Accepted Index: [assessment](https://github.com/opensiro/vsm-harness-index/blob/59b99775d049a19fa29e7cc410a840bb5bf1ecc7/assessments/ko/konductor.md) @ 59b99775d049a19fa29e7cc410a840bb5bf1ecc7, blob 01e846897ae499497ffd65a2be0d359187f2e866, review_ref 09c34858ca2e704fb8572c91389a87255b1e1075; INCLUDED.
+- Current owner metadata: `ACTIVE / ALLOW` on fork `opensiro/meta`, enabling internal records, not original/fork-public publication.
+- Case identity: `aws-toolkit-adaptation-20261119` preserved for #58 provenance. The historical AWS toolkit-specific **NO_GO** is separately preserved at [commit 8975ba9f](https://github.com/opensiro-contributions/konductor/commit/8975ba9f4165388c7ada9da4a8bf9caa6479880c); fresh S4 host-compatibility proposal is a **different evaluation object**, not reversal of the original #39 outcome.
+- Human-facing design: [issue.md](issue.md).
+- Technical constructor: [constructor-sufficiency.md](constructor-sufficiency.md).
+- Canonical evidence/decision receipt: [roadmap.md](roadmap.md).
+- Public fork Issue: NOT_CREATED; original public Issue/PR/comment: NOT_CREATED.
+- Native host/model tests and cost comparison: NOT_RUN / NOT_MEASURED.
 
-The Human file's first line is the exact proposed public title and the rest its full body. Canonical case files are on this verified fork's independent opensiro/meta. No product/default changes or contribution record. Initial PAUSE/DORMANT permits no later effectful work without a genuine owner RESUME/ALLOW; fork creation grants no public Issue consent. Existing original discussion: https://github.com/aws-solutions/konductor/issues/39.
-
-Next decision: optional exact public fork Issue approval of issue.md at the verified destination, with explicit RESUME/ALLOW for any later metadata updates. Current feature NO_GO is complete and does not depend on implementing #39 first. READY_FOR_FORK_ISSUE_APPROVAL — NOT PUBLISHED.
-
-Earlier browser sign-in did not complete. That provisioning blocker was subsequently resolved through dev-alpha-2 SSH/gh; no browser authentication, external-original message, public Issue or PR was used.
+The S4 hypothesis reuses native diagnostics, specialist skills and current manager, with bounded per-session alternatives and explicit actual later-run feedback. The original #312 skill exposure PR remains native work and must be compared before any implementation. No source-code change is proposed as already accepted.
