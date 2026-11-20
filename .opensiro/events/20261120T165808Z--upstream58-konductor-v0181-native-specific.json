@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "20261120T165808Z--upstream58-konductor-v0181-native-specific",
+  "recorded_at": "2026-11-20T16:58:08Z",
+  "actor": "ChatGPT OpenSiro independent Upstream #58 source-first operator via dev-alpha-2 (GitHub xLagerFeuer)",
+  "kind": "DECISION",
+  "case_id": "aws-toolkit-adaptation-20261119",
+  "decision": "GO / NEEDS_EVIDENCE; v0.18.1 NATIVE_SPECIFIC_REFINEMENT, plan-only",
+  "source_ref": "f5d184596378ae72ae531d80647548512c14cacf",
+  "accepted_index_ref": "5dbb51b2ddad0f29a84e10b4b5009c8989159165",
+  "accepted_assessment_blob_sha": "01e846897ae499497ffd65a2be0d359187f2e866",
+  "evidence_urls": [
+    "https://github.com/aws-solutions/konductor/commit/f5d184596378ae72ae531d80647548512c14cacf",
+    "https://github.com/aws-solutions/konductor/pull/312",
+    "https://github.com/aws-solutions/konductor/pull/303",
+    "https://github.com/aws-solutions/konductor/pull/231",
+    "https://github.com/aws-solutions/konductor/pull/232",
+    "https://github.com/opensiro/upstream/issues/58#issuecomment-7045242617",
+    "https://github.com/opensiro/upstream/issues/58#issuecomment-7045300922"
+  ],
+  "note": "Same existing S4=? -> S4=C proposed case; prior v0.18 source-first verdict and distinct historical AWS Toolkit NO_GO remain pinned in Git history. Replaced obsolete claim #312/#303 OPEN with MERGED current status, pinned original and Index, narrowed to per-installed-target Kiro/Claude official future host contract -> legitimate agent choice -> subsequent real invocation feedback. v0.18.1 advisory is not a new gate or grade. No original native tests, measured benefit or external-public action.",
+  "next_action": "Real matched host tests and canonical rights check before any proposed implementation; maintainer decides adoption, exact publication approval required for any original/fork-public interaction."
+}

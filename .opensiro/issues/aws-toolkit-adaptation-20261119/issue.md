@@ -1,8 +1,8 @@
 # Konductor — host capability drift S4 constructor (OpenSiro independent roadmap)
 
-**PLAN_ONLY · proposed GO · research NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED**
+**PLAN_ONLY · v0.18.1 native-specific same-case refinement · proposed GO · research NEEDS_EVIDENCE · DRAFT — NOT PUBLISHED**
 
-**One-sentence proposal:** Compose an opt-in, bounded S4 adaptation loop that observes supported Kiro/Claude host capability changes, chooses an allowed response, consults current S3 and verifies the next operating outcome.
+**One-sentence proposal:** For one installed Kiro-v2/Kiro-v3/Claude Konductor manifest strategy, compose an opt-in S4 reviewer that matches an official *future* host contract change to the actual installation, chooses among user-authorized retain/test/escalate options, and learns from the next real specialist/SOP outcome; no automatic host or permission change.
 
 **Canonical decision receipt:** [roadmap.md](roadmap.md).
 **AI technical companion:** [constructor-sufficiency.md](constructor-sufficiency.md).
@@ -39,7 +39,7 @@
 | Decision ownership and rights | [orchestration mode](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/cli/konductor-rs/src/cli/orchestration_mode.rs) is user-owned; agent and skill registry exist | Explicit composition envelope for per-session S4 options; preserve parent rights, record why each option is permitted |
 | S3 dialogue and future feedback | [orchestrator](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/agents/konductor.agent-spec.json) and [SOP gates](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/agent-sops/k-full-sdlc.sop.md) run current tasks | S3 accepts/refuses trial, next actual operating result returns to S4 receipt, rollback or halt when missing evidence |
 
-**Track A in-flight:** PR #312 remains OPEN and solves specific Kiro skill exposure, PR #303 remains OPEN for Claude SOP availability, [PR #207](https://github.com/aws-solutions/konductor/pull/207) and [issue #301](https://github.com/aws-solutions/konductor/issues/301) concern usage metrics; CLI `metrics` is a stub at current main. No imagined merged feature or API.
+**Track A at 2026-11-19 observation:** PR #312 and #303 were then OPEN for Kiro role-skill exposure and Claude SOP availability, respectively; both are now MERGED on current original main. Separate [PR #207](https://github.com/aws-solutions/konductor/pull/207) and [issue #301](https://github.com/aws-solutions/konductor/issues/301) concern usage metrics; CLI `metrics` is a stub at current main. No imagined merged feature or API.
 
 **Falsifier:** If ordinary diagnostics/manual selection or #312 already handles the matched future task equally, if the model only repeats static advice, or if no lawful S3→future-task→S4 feedback exists, drop P0 and keep native alternatives.
 
@@ -67,3 +67,20 @@ The previously stored [AWS toolkit adaptation case](https://github.com/opensiro-
 Complete design is in [constructor-sufficiency.md](constructor-sufficiency.md) with [receipt](roadmap.md). Architecture hypothesis is source-grounded; benefit and closure remain unverified. Before code: test matched native alternative, preserve parent rights and ask maintainer for exact external-publication consent if any new outside contact is contemplated.
 
 **Rights:** Apache-2.0 source with NOTICE, original [CONTRIBUTING](https://github.com/aws-solutions/konductor/blob/783603d485727654fa1ab51fefbd9d1169fefa86/CONTRIBUTING.md) asks for significant-feature discussion, licensing confirmation and possible larger-change CLA. Owner metadata is ACTIVE / ALLOW for internal research and fork metadata, **not** original/fork public Issue/PR approval. This document is DRAFT — NOT PUBLISHED; AI assistance disclosed. No native tests, grade change, PR to original or measured cost saving claimed.
+
+
+## 2026-11-20 · v0.18.1 native-specific same-case amendment
+
+**Current original [main@f5d184596378ae72ae531d80647548512c14cacf](https://github.com/aws-solutions/konductor/commit/f5d184596378ae72ae531d80647548512c14cacf)**; accepted Index remains [included@5dbb51b2ddad0f29a84e10b4b5009c8989159165](https://github.com/opensiro/vsm-harness-index/blob/5dbb51b2ddad0f29a84e10b4b5009c8989159165/assessments/ko/konductor.md), blob 01e846897ae499497ffd65a2be0d359187f2e866; review ref 09c34858ca2e704fb8572c91389a87255b1e1075; 2026-11-18 Profile 0.2.4 / Skills 0.3.8. The six-row table above is the **historical accepted** six-function classification, not a new score. Its original file links are the frozen 2026-11-19 observation, updated source-native details live in the [receipt](roadmap.md) and [AI contract](constructor-sufficiency.md).
+
+**What is already solved:** [PR #312](https://github.com/aws-solutions/konductor/pull/312) and [#303](https://github.com/aws-solutions/konductor/pull/303) are **MERGED**. Their concrete Kiro skill visibility and Claude SOP loading corrections should be reused; the earlier draft's OPEN labels were historical. [#231](https://github.com/aws-solutions/konductor/pull/231) and [#232](https://github.com/aws-solutions/konductor/pull/232) are **OPEN** native workflow/host-version work, not an already shipped S4 feedback loop.
+
+**Proposed operator outcome (hypothetical):** before a *future* Kiro or Claude skill/SOP/tool-interface retirement, the developer enables an optional review for one installed `kiro-cli-v2`, `kiro-v3` or `claude` strategy recorded in `.konductor/manifest`. Konductor's model-backed S4 reviewer verifies an official dated upstream notice against that strategy and present `doctor --json` status, proposes **retain / test after explicit approval / escalate**, then receives the next real supported specialist/SOP invocation and diagnostic result from current S3. This does **not** migrate hosts, change config, grant tools or replace the Konductor orchestrator.
+
+**Track A:** present diagnostics, managed manifests, manual transitions, merged native fixes. **Track B:** only the *missing* optional official-future-evidence → bounded model choice → parent-approved S3 trial → later observed outcome return. **Falsifier:** existing or soon-merged host implementation demonstrates this same complete decision and feedback for that exact future task, or no legal discretionary alternative exists.
+
+**Priorities:** P0 this one native prospective host-strategy decision and return; P1 trustworthy source/version/permission and subsequent real-run evidence; P2 NONE. **Proposal-stage decision:** GO
+
+**Research disposition:** NEEDS_EVIDENCE
+
+**Not proven:** no implementation, Kiro/Claude smoke, benefit measurement or native test run. Public fork/original Issue and PR **NOT PUBLISHED**; maintainer makes the product adoption decision. Full host-specific positive/negative tests and source pins are in [constructor-sufficiency.md](constructor-sufficiency.md). This is the same `aws-toolkit-adaptation-20261119` case folder with attributed history, **not** a new independent rerun or reversal of the earlier different AWS Toolkit NO_GO.
