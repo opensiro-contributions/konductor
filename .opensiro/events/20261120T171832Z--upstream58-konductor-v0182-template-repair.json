@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "20261120T171832Z--upstream58-konductor-v0182-template-repair",
+  "recorded_at": "2026-11-20T17:18:32Z",
+  "actor": "ChatGPT Upstream #58 v0.18.2 template-correction operator (GitHub xLagerFeuer)",
+  "kind": "DECISION",
+  "case_id": "aws-toolkit-adaptation-20261119",
+  "decision": "GO / NEEDS_EVIDENCE unchanged; V0.18.2_TEMPLATE_PREFLIGHT_PASS_NOT_PUBLICATION_APPROVAL",
+  "source_ref": "f5d184596378ae72ae531d80647548512c14cacf",
+  "accepted_index_ref": "5dbb51b2ddad0f29a84e10b4b5009c8989159165",
+  "accepted_assessment_blob_sha": "01e846897ae499497ffd65a2be0d359187f2e866",
+  "evidence_urls": [
+    "https://github.com/opensiro/upstream/releases/tag/v0.18.2",
+    "https://github.com/opensiro/upstream/pull/90",
+    "https://github.com/opensiro/upstream/issues/58#issuecomment-7045525632"
+  ],
+  "note": "Filled existing Human issue.md and AI constructor-sufficiency.md to current v0.18.2 eight-/six-section publication templates. Readme updated. Both validators PASS before write. No new VSM review; canonical roadmap.md and historic AWS Toolkit NO_GO preserved. Product tests NOT_RUN, benefit NOT_MEASURED, no public fork Issue/PR or third-party publication.",
+  "next_action": "Potential later external PR only after fresh live readback of exact committed case, rerun both structural validators, native tests/review and separate exact current-conversation public-consent gate."
+}

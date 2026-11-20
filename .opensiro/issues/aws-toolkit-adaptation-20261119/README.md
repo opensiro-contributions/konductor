@@ -1,5 +1,7 @@
 # Konductor — independent whole-repository roadmap rerun and v0.18.1 native-specific continuation
 
+**v0.18.2 Human/AI template correction (2026-11-20):** The currently published [Human proposal](issue.md) and [AI construction contract](constructor-sufficiency.md) follow the Upstream v0.18.2 eight-/six-section publication templates. The canonical [receipt](roadmap.md), accepted historical Index vector, P0/P1/P2 and proposal-stage GO / NEEDS_EVIDENCE remain unchanged. Both v0.18.2 source-only validators passed on this case; this does **not** approve a public Issue/PR or prove native host functionality. Previous documents remain inspectable in parent Git commits.
+
 **Current 2026-11-20 v0.18.1 native-specific same-case review:** reuses the earlier 2026-11-19 independent rerun, source-pinned at original `f5d184596378ae72ae531d80647548512c14cacf`. Existing Konductor merged #312 Kiro skill fix and #303 Claude SOP fix are already native coverage; scope is a **hypothetical future** installed-strategy compatibility decision with an **actual next-task return**, not a duplicate of those fixes. Historical independent outcome below remains attributable.
 
 **2026-11-19 v0.18.0 independent rerun:** Scoped **GO + NEEDS_EVIDENCE** for *proposed* `S4=? -> S4=C` host-capability drift adaptation. **Not implemented, not native-tested, not published externally.** Indexed historical grade unchanged.
